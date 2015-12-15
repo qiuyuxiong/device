@@ -1,0 +1,41 @@
+<layout name="Index/header_footer" />
+<div class="pd-20">
+<div class="text-c">
+    <form class="Huiform" method="post" action="__SELF__">
+    <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+        
+      <input type="text" placeholder="角色名称" name="role_name" autocomplete="off" value="<?php echo $data['role_name']; ?>" class="input-text" style=" width:150px"><br />
+      <span style="margin-left:-75px;">权限列表:</span><br />
+        <?php foreach($priData as $k=>$v):?>
+                       <?php 
+                       if(strpos(','.$pri_id.',', ','.$v['id'].',') !== FALSE)
+                            $check = 'checked="checked"';
+                        else 
+                            $check = '';
+                        ?>
+                        <?php echo str_repeat('&nbsp;',$v['level']*6);?>
+                        <input {$check} level="{$v.level}" type="checkbox" name="pri_id[]" value="{$v.id}" />{$v.pri_name}<br />
+                    <?php endForeach;?>    
+      <input type="submit" class="btn btn-success" value="修改" />
+      <input type="reset" class="btn" value="重置" />
+
+    </form>
+  </div>
+  </div>
+
+  <script>
+// 让提交只能点一次
+$(":submit").click(function(){
+    var sec = 3;
+    $(this).attr('disabled', 'disabled');
+    $(this).val(sec + "秒之后提交");
+    var _this = $(this);
+    setInterval(function(){
+        if(--sec==0)
+            $("form[name=main_form]").submit();
+        else
+            _this.val(sec + "秒之后提交");
+        _this.val();
+    }, 1000);
+
+});

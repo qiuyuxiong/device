@@ -1,0 +1,45 @@
+<layout name="Index/header_footer" />
+<title>角色列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="iconfont">&#xf012b;</i> 首页 <span class="c-gray en">&gt;</span> 角色管理 <span class="c-gray en">&gt;</span> 角色列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="icon-refresh"></i></a></nav>
+<div class="pd-20">
+	 <div class="text-c"> 
+	 <form action="" method="get">
+    <input type="text" class="input-text" style="width:250px" placeholder="输入角色名称" id="" name="role_name" value="<?php echo I('get.role_name'); ?>"><input type="submit" class="btn btn-success" value="搜角色" />
+    </form>
+  </div>
+  <div class="cl pd-5 bg-1 bk-gray">
+    <span class="l">
+      <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a>
+      <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('750','','添加角色','__CONTROLLER__/add')"><i class="icon-plus"></i> 添加角色</a>
+    </span>
+    <span class="r">共有数据：<strong><?php echo count($data);?></strong> 条</span>
+  </div>
+  <table class="table table-border table-bordered table-hover table-bg">
+    <thead>
+      <tr>
+        <th scope="col" colspan="4">角色管理</th>
+      </tr>
+      <tr class="text-c">
+        <th width="25"><input type="checkbox" value="" name=""></th>
+        <th width="40">ID</th>
+        <th width="200">角色名</th>
+        <th width="70">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($data as $k => $v): ?>
+      <tr class="text-c tron">
+        <td><input type="checkbox" value="" name=""></td>
+        <td><?php echo $v['id']; ?></td>
+        <td><?php echo $v['role_name']; ?></td>
+        <td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('1','750','','角色编辑','<?php echo U("edit?id=".$v["id"]."&p=".I("get.p",1)); ?>')" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="<?php echo U('delete?id='.$v['id'].'&p='.I('get.p',1)); ?>" onclick='return confirm("你确定要删除吗？");' class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+      </tr>
+  <?php endforeach;?>
+   		<?php if(preg_match('/\d/', $page)): ?>  
+        <tr><td align="right" nowrap="true" colspan="99" height="30"><?php echo $page; ?></td></tr> 
+        <?php endif; ?>
+    </tbody>
+  </table>
+</div>

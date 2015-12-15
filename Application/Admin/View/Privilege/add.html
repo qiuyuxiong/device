@@ -1,0 +1,43 @@
+
+<layout name="Index/header_footer" />
+<div class="pd-20">
+<div class="text-c">
+    <form class="Huiform" name='main_form' method="post" action="__SELF__">
+
+      <span style="margin-left:-100px;">上级权限:</span>
+      
+       <select name="parent_id">
+            <option value="0">顶级权限</option>
+                <?php foreach ($parentData as $k => $v): ?>      <option value="<?php echo $v['id']; ?>"><?php echo str_repeat('&nbsp;', 6*$v['level']).$v['pri_name']; ?></option>
+                <?php endforeach; ?>                    
+        </select><br />
+        <input type="text" placeholder="权限名称" name="pri_name" autocomplete="off" value="" class="input-text" style=" width:150px"><br />
+        <input type="text" placeholder="模块名称" name="module_name" autocomplete="off" value="" class="input-text" style=" width:150px"><br />
+        <input type="text" placeholder="控制器名称" name="controller_name" autocomplete="off" value="" class="input-text" style=" width:150px"><br />
+        <input type="text" placeholder="方法名称" name="action_name" autocomplete="off" value="" class="input-text" style=" width:150px"><br />
+        
+      <input type="submit" class="btn btn-success" value="添加" />
+      <input type="reset" class="btn" value="重置" />
+
+    </form>
+  </div>
+  </div>
+<script>
+// 让提交只能点一次
+$(":submit").click(function(){
+    var sec = 3;
+    $(this).attr('disabled', 'disabled');
+    $(this).val(sec + "秒之后提交");
+    var _this = $(this);
+    setInterval(function(){
+        if(--sec==0)
+            $("form[name=main_form]").submit();
+        else
+            _this.val(sec + "秒之后提交");
+        _this.val();
+    }, 1000);
+
+});
+
+
+</script>

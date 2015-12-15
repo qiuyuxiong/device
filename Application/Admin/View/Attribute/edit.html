@@ -1,0 +1,17 @@
+
+<layout name="Index/header_footer" />
+<div class="pd-20">
+<div class="text-c">
+    <form class="Huiform" method="post" action="__SELF__">
+    <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+        
+      <input type="text" placeholder="属性名称" name="attr_name" autocomplete="off" value="<?php echo $data['attr_name']; ?>" class="input-text" style=" width:270px"><br />
+     <input type="text" placeholder="属性的类型0：唯一 1：可选" name="attr_type" autocomplete="off" value="<?php echo $data['attr_type']; ?>" class="input-text" style=" width:270px"><br />
+     <input type="text" placeholder="属性的可选值，多个可选值用，隔开" name="attr_option_values" autocomplete="off" value="<?php echo $data['attr_option_values']; ?>" class="input-text" style=" width:270px"><br />
+     <input type="text" placeholder="所在的类型的id" name="type_id" autocomplete="off" value="<?php echo $data['type_id']; ?>" class="input-text" style=" width:270px"><br />
+      <input type="submit" class="btn btn-success" value="修改" />
+      <input type="reset" class="btn" value="重置" />
+
+    </form>
+  </div>
+  </div>

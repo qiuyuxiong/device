@@ -1,0 +1,72 @@
+﻿<layout name="Index/header_footer" />
+<title>我的桌面</title>
+</head>
+<body>
+<div class="pd-20" style="padding-top:20px;">
+  <p class="f-20 text-success">欢迎使用设备信息管理系统</p>
+  <p>登录用户：<?php echo session('username');?> </p>
+  <p>登录IP：{$server['REMOTE_ADDR']}  登录时间：{$server['time']}</p>
+
+  <table class="table table-border table-bordered table-bg mt-20">
+    <thead>
+      <tr>
+        <th colspan="2" scope="col">服务器信息</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th width="200">服务器计算机名</th>
+        <td><span id="lbServerName">{$server['SERVER_NAME']}</span></td>
+      </tr>
+      <tr>
+        <td>服务器IP地址</td>
+        <td>{$server['SERVER_ADDR']}</td>
+      </tr>
+      <tr>
+        <td>服务器域名</td>
+        <td>{$server['REQUEST_URI']}</td>
+      </tr>
+      <tr>
+        <td>服务器端口 </td>
+        <td>{$server['SERVER_PORT']}</td>
+      </tr>
+      <tr>
+        <td>服务器版本 </td>
+        <td>{$server['SERVER_SOFTWARE']}</td>
+      </tr>
+      <tr>
+        <td>本文件所在文件夹 </td>
+        <td>{$server['SCRIPT_FILENAME']}</td>
+      </tr>
+      <tr>
+        <td>服务器操作系统 </td>
+        <td>{$server['HTTP_USER_AGENT']}</td>
+      </tr>
+      <tr>
+        <td>系统所在文件夹 </td>
+        <td>{$server['SystemRoot']}</td>
+      </tr>
+      <tr>
+        <td>服务器脚本超时时间 </td>
+        <td>{$server['REMOTE_PORT']}秒</td>
+      </tr>
+      
+      
+      <tr>
+        <td>服务器当前时间 </td>
+        <td><?php echo date('Y-m-d H:i:s');?></td>
+      </tr>
+    
+      <tr>
+        <td>当前SessionID </td>
+        <td>{$server['HTTP_COOKIE']}</td>
+      </tr>
+      <tr>
+        <td>当前系统用户名 </td>
+        <td><?php echo session('username');?></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

@@ -1,0 +1,38 @@
+
+<layout name="Index/header_footer" />
+<div class="pd-20">
+<div class="text-c">
+    <form class="Huiform" method="post" action="__SELF__">
+   <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+        <input type="hidden" name="old_logo" value="<?php echo $data['logo']; ?>" />
+        <input type="hidden" name="old_big_logo" value="<?php echo $data['big_logo']; ?>" />
+        <input type="hidden" name="old_mid_logo" value="<?php echo $data['mid_logo']; ?>" />
+        <input type="hidden" name="old_sm_logo" value="<?php echo $data['sm_logo']; ?>" />
+        
+      <input type="text" placeholder="品牌名称" name="brand_name" autocomplete="off" value="<?php echo $data['brand_name']; ?>" class="input-text" style=" width:150px"><br />
+         <input type="text" placeholder="品牌网站地址" name="site_url" autocomplete="off" value="<?php echo $data['site_url']; ?>" class="input-text" style=" width:150px"><br />
+         <span style="margin-left:-100px">原品牌图：</span><br />
+         <?php showImage($data['logo'], 100); ?><br />
+         <input type="file" placeholder="logo" name="logo" autocomplete="off"  class="input-text" style=" width:150px"><br />
+      <input type="submit" class="btn btn-success" value="修改" />
+      <input type="reset" class="btn" value="重置" />
+
+    </form>
+  </div>
+  </div>
+  <script>
+// 让提交只能点一次
+$(":submit").click(function(){
+    var sec = 3;
+    $(this).attr('disabled', 'disabled');
+    $(this).val(sec + "秒之后提交");
+    var _this = $(this);
+    setInterval(function(){
+        if(--sec==0)
+            $("form[name=main_form]").submit();
+        else
+            _this.val(sec + "秒之后提交");
+        _this.val();
+    }, 1000);
+
+});

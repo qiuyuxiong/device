@@ -1,0 +1,66 @@
+<layout name="Index/header_footer" />
+
+
+<title>权限列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="iconfont">&#xf012b;</i> 首页 <span class="c-gray en">&gt;</span> 权限管理 <span class="c-gray en">&gt;</span> 权限列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="icon-refresh"></i></a></nav>
+<div class="pd-20">
+	<div class="text-c"> 
+	 <form action="" method="get">
+    <input type="text" class="input-text" style="width:250px" placeholder="输入权限名称" id="" name="pri_name" value="<?php echo I('get.pri_name'); ?>">
+    <input type="text" class="input-text" style="width:250px" placeholder="输入模块名称" id="" name="module_name" value="<?php echo I('get.module_name'); ?>"><br />
+    <input type="text" class="input-text" style="width:250px" placeholder="输入控制器名称" id="" name="controller_name" value="<?php echo I('get.controller_name'); ?>">
+    <input type="text" class="input-text" style="width:250px" placeholder="输入方法名称" id="" name="action_name" value="<?php echo I('get.action_name'); ?>"><br />
+    
+    <input type="text" class="input-text" style="width:430px" placeholder="输入权限ID上级权限的ID，0：代表顶级权限" id="" name="parent_name" value="<?php echo I('get.parent_name'); ?>">
+    <input type="submit" class="btn btn-success" value="搜权限" />
+    </form>
+  </div>
+  <div class="text-c">
+  </div>
+  <div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a><a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('750','','添加权限','__CONTROLLER__/add')"><i class="icon-plus"></i> 添加权限</a></span>
+    <span class="r">共有数据：<strong><?php echo count($data);?></strong> 条</span>
+  </div>
+  <table class="table table-border table-bordered table-bg">
+    <thead>
+      <tr>
+        <th scope="col" colspan="8">权限节点</th>
+      </tr>
+      <tr class="text-c">
+        <th width="25"><input type="checkbox" name="" value=""></th>
+        <th>ID</th>
+        <th>权限名称</th>
+        <th>模块名称</th>
+        <th>控制器名称</th>
+        <th>方法名称</th>
+        <th>上级权限的ID，0：代表顶级权限</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($data as $k => $v): ?>            
+			<tr class="text-c tron">
+        <td><input type="checkbox" value="1" name=""></td>
+				<td><?php echo $v['id']; ?></td>
+				<td><?php echo str_repeat('&nbsp;', 6*$v['level']); ?>|--<?php echo $v['pri_name']; ?></td>
+				<td><?php echo $v['module_name']; ?></td>
+				<td><?php echo $v['controller_name']; ?></td>
+				<td><?php echo $v['action_name']; ?></td>
+				<td><?php echo $v['parent_id']; ?></td>
+				
+
+	                
+        <td class="f-14 admin-manage"><a title="编辑" href="javascript:;" onclick="admin_edit('1','750','','编辑','<?php echo U('edit?id='.$v['id'].'&p='.I('get.p'));?>')" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> 
+        
+        <a title="删除" href="<?php echo U('delete?id='.$v['id'].'&p='.I('get.p',1)); ?>" onclick='return confirm("你确定要删除吗？");' class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
+	           
+		       
+	        </tr>
+        <?php endforeach; ?> 
+		
+      
+    </tbody>
+  </table>
+</div>

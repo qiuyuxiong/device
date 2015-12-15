@@ -1,0 +1,177 @@
+[ 2015-12-15T00:00:59+08:00 ] 127.0.0.1 /device/index.php/Admin/Device/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Device" AND action_name="add" [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `dev_type` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `dev_type`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dev_category` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `dev_category`  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_brand` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `dev_brand`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: _page_title D:\amp\apache\htdocs\device\Application\Runtime\Cache\Admin\a72a92c230cc54e02477f8c172d75e69.php 第 9 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\amp\apache\htdocs\device\Application\Runtime\Cache\Admin\a72a92c230cc54e02477f8c172d75e69.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-12-15T00:01:15+08:00 ] 127.0.0.1 /device/index.php/Admin/Category/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Category" AND action_name="lst" [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dev_category` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `dev_category`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.143008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.143008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-12-15T00:01:19+08:00 ] 127.0.0.1 /device/index.php/Admin/Type/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Type" AND action_name="lst" [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_type` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM dev_type a LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM dev_type a GROUP BY a.id LIMIT 0,20   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T00:01:23+08:00 ] 127.0.0.1 /device/index.php/Admin/Attribute/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Attribute" AND action_name="lst" [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_attribute` [ RunTime:0.011001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM dev_attribute a LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM dev_attribute a GROUP BY a.id LIMIT 0,20   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_type` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `dev_type`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T00:01:30+08:00 ] 127.0.0.1 /device/index.php/Admin/Attribute/lst/type_id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Attribute" AND action_name="lst" [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_attribute` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM dev_attribute a WHERE ( `type_id` = '1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM dev_attribute a WHERE ( `type_id` = '1' ) GROUP BY a.id LIMIT 0,20   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dev_type` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `dev_type`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T00:01:32+08:00 ] 127.0.0.1 /device/index.php/Admin/Attribute/lst/type_id/1?attr_name=&attr_type=&attr_option_values=&type_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Attribute" AND action_name="lst" [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_attribute` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM dev_attribute a WHERE ( `type_id` = '1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM dev_attribute a WHERE ( `type_id` = '1' ) GROUP BY a.id LIMIT 0,20   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dev_type` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `dev_type`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T00:01:38+08:00 ] 127.0.0.1 /device/index.php/Admin/Privilege/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SELECT COUNT(*) has FROM dev_privilege WHERE module_name="Admin" AND controller_name="Privilege" AND action_name="lst" [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dev_privilege` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `dev_privilege`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
